@@ -1,0 +1,147 @@
+/* Question: How can we use a for loop to print numbers from 1 to 10? */
+#include <stdio.h>
+
+int main() {
+    int i;
+    for (i = 1; i <= 10; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+/* Question: How can we use a while loop to print numbers from 1 to 10? */
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+    while (i <= 10) {
+        printf("%d ", i);
+        i++;
+    }
+    printf("\n");
+    return 0;
+}
+/* Question: How can we use a do-while loop to print numbers from 1 to 10? */
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+    do {
+        printf("%d ", i);
+        i++;
+    } while (i <= 10);
+    printf("\n");
+    return 0;
+}
+/* Question: How can we find the Fibonacci series up to n terms in C? */
+#include <stdio.h>
+
+int main() {
+    int n = 10, i, t1 = 0, t2 = 1, nextTerm;
+    printf("Fibonacci Series up to %d terms: \n", n);
+    for (i = 1; i <= n; i++) {
+        printf("%d, ", t1);
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+    }
+    printf("\n");
+    return 0;
+}
+/* Question: How can we calculate the factorial of a number using a loop? */
+#include <stdio.h>
+
+int main() {
+    int n = 5, factorial = 1, i;
+    for (i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+    printf("Factorial of %d: %d\n", n, factorial);
+    return 0;
+}
+/* Question: How can we check if a number is prime or not in C? */
+#include <stdio.h>
+
+int main() {
+    int n = 17, i, isPrime = 1;
+    for (i = 2; i <= n / 2; i++) {
+        if (n % i == 0) {
+            isPrime = 0;
+            break;
+        }
+    }
+    if (isPrime == 1)
+        printf("%d is a prime number\n", n);
+    else
+        printf("%d is not a prime number\n", n);
+    return 0;
+}
+/* Question: How can we swap two numbers without using a temporary variable in C? */
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 10;
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    printf("After swapping: a = %d, b = %d\n", a, b);
+    return 0;
+}
+/* Question: How can we calculate the sum of digits of a number in C? */
+#include <stdio.h>
+
+int main() {
+    int num = 12345, sum = 0, digit;
+    while (num != 0) {
+        digit = num % 10;
+        sum += digit;
+        num /= 10;
+    }
+    printf("Sum of digits: %d\n", sum);
+    return 0;
+}
+/* Question: How can we find the largest among three numbers in C? */
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 10, c = 7;
+    int max = (a > b && a > c) ? a : ((b > c) ? b : c);
+    printf("Largest number: %d\n", max);
+    return 0;
+}
+/* Question: How can we find the reverse of a number in C? */
+#include <stdio.h>
+
+int main() {
+    int num = 12345, reversed = 0, remainder;
+    while (num != 0) {
+        remainder = num % 10;
+        reversed = reversed * 10 + remainder;
+        num /= 10;
+    }
+    printf("Reversed number: %d\n", reversed);
+    return 0;
+}
+/* Question: How can we find the power of a number using recursion in C? */
+#include <stdio.h>
+
+int power(int base, int exponent) {
+    if (exponent == 0)
+        return 1;
+    else
+        return base * power(base, exponent - 1);
+}
+
+int main() {
+    int base = 2, exponent = 3;
+    printf("%d raised to power %d is %d\n", base, exponent, power(base, exponent));
+    return 0;
+}
+/* Question: How can we find the sum of first n natural numbers in C? */
+#include <stdio.h>
+
+int main() {
+    int n = 10, sum;
+    sum = n * (n + 1) / 2;
+    printf("Sum of first %d natural numbers: %d
